@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    div(class="container-fluid gutter")
+        div(class="col-md-12")
+            h1.headerOne New Recipe
+        div(class="row")
+            div(class="col-md-8")
+                form(method="POST" action="/newRecipe")
+                    div(class="form-group")
+                        div(class="col-md-12")
+                            label(for="recipeName") Recipe Name
+                            input(class="form-control" id="recipeName" name="recipeName")
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="recipeType") Recipe Type 
+                            select(class="form-control" id="recipeType" name="recipeType")
+                                option Breakfast
+                                option Lunch
+                                option Dinner
+                                option Snack
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="ingredientsList") Ingredients List
+                            textarea(class="form-control" id="ingredientsList" name="ingredientsList")
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="directions") Directions
+                            textarea(class="form-control" id="directions" name="directions")
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="imgUrl") Image Url
+                            input(class="form-control" id="imgUrl" name="imgUrl")
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="notes") Notes
+                            input(class="form-control" id="notes" name="notes")
+                
+                    button(class="btn btn-secondary " type="submit") Create Recipe
+
+            div(class="col-md-3")
+                p.faded Want to add this to your shopping list?
+
+                - if(signedIn === true)
+                    a(class="btn btn-secondary") Add to your calendar
+
+                - else
+                    a(class="btn btn-info text-white w-100" href="/login") Login

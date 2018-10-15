@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    div(class="container-fluid gutter")
+        div(class="row")
+            h2(class="headerOne col-md-8") Recipes
+            div(class="col-md-2")
+                a(href='/newRecipe' class=" btn btn-secondary") Add New Recipe
+            div(class="col-md-2")
+                a(href='/shoppingList/all' class=" btn btn-info") View Shopping List
+        div(class=" row col-md-12 card-deck")
+            - for( var i = 0; i < data.length; i++)
+                div(class="col-md-3 recipe-card gutter")
+                    a(class="card-link" href=`/recipes/${data[i].dataValues.id}`)
+                        img(class="col-12 card-img-top recipe-img" src=`${data[i].dataValues.imgUrl}` alt="Card image cap")
+                        div(class="card-body recipe-overlay")
+                            h5.recipe-overlay-text #{data[i].dataValues.recipeName}
+
+                            

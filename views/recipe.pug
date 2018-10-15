@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    div(class="container-fluid d-flex flex-wrap")
+        div(class="col-md-9")
+            div(class="d-flex flex-column recipe-header")
+                div(class="p-2 align-self-center")
+                    img(class="recipe-img circle-img" src=`${data.dataValues.imgUrl}`)
+                div(class="p-2 text-center")
+                    h1.headerThree #{data.dataValues.recipeName}
+                div(class="p-2 text-center")
+                    p.faded yield:  6 SERVINGS prep time: 15 MINUTES cook time: 35 MINUTES total time: 50 MINUTES
+                    p #{data.dataValues.description}
+
+            div(class="d-flex flex-column card-body")
+                div(class="col-md-12")
+                    h5.h5 INGREDIENTS:
+                    ul(class="list-group")
+                        - for(var i = 0; i < ingredientsList.length; i++)
+                            li(class="list-item") #{ingredientsList[i]}
+                
+                div(class="col-md-12 gutter")
+                    h5.h5 DIRECTIONS:
+                    ol(class="list-group")
+                        - for(var i = 0; i < directionsList.length; i++)
+                            li(class="list-item") #{directionsList[i]}
+
+                - if(data.dataValues.notes !== null || data.dataValues.notes === '')
+                    div(class="card col-md-12 gutter")
+                        div(class="card-body")
+                            h5.h5 NOTES:
+                            p * #{data.dataValues.notes}
+                
+
+        div(class="col-md-3 gutter")
+            div(class="col-md-auto gutter")
+                p.faded Want to add this to your shopping list?
+                - if(signedIn === true)
+                    a(class="btn btn-info w-100" href="/login") Login
+
+                - else
+                    form(method="POST" action="/shoppingList")
+                        input(name="addedToList" value="1" hidden)
+                        button(type="submit" class="btn btn-info w-100 text-white") Add to your shopping list
+            div(class="col-md-auto gutter")
+                a(href=`/recipes/edit/${data.dataValues.id}` class="btn btn-danger w-100") Edit recipe

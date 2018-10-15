@@ -1,0 +1,37 @@
+/* Navbar fade in */
+
+.navbarBackground{
+    background-color:rgba(0,0,0,0.5);
+    height:auto;
+    position:fixed;
+  }
+  
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+  }
+  
+  ul {
+    max-height: 120px;
+    width: 100vw;
+  }
+  
+  li {
+    margin: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  li a{
+    color:black;
+    font-weight:lighter;
+    padding:20px 0px 20px 0px;
+  }
+  
+  li a:hover{
+    color:black;
+    font-weight:400;
+  }

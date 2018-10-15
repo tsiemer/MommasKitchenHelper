@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js", integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy", crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Courgette|Alegreya+Sans:300|Roboto" rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/navbar.css')
+    script(src="/javascripts/fixedNavbarFeature.js")
+  body
+    div(class="navbar")
+        div(class="fixed")
+            ul(class="nav justify-content-center")
+                li
+                    a(class="nav-link" href="/#Intro") Home
+                li
+                    a(class="nav-link" href="/#Meat") Meat
+                li
+                    a(class="nav-link" href="/#Veggies") Veggies
+                li
+                    a(class="nav-link" href="/#Fruit") Fruit
+                li
+                    a(class="nav-link" href="/recipes/all") Recipes
+    

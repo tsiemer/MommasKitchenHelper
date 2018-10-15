@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div(class="container-fluid gutter")
+        div(class="row")
+            div(class="align-self-center col-md-12")
+                h4.headerOne Shopping List
+
+            div(class="col-md-8")
+                ul(class="list-group")
+                    - for(var i = 0; i < data.length; i++)
+                        p(class="headerTwo") #{data[i].dataValues.recipeName}
+                    //- - for(var i = 0; i < ingredientsList.length; i++)
+                    //-     li(class="list-item") #{ingredientsList[i]}

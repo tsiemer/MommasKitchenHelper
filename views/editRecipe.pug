@@ -1,0 +1,53 @@
+extends layout
+
+block content
+    div(class="container-fluid gutter")
+        div(class="col-md-12")
+            h1.headerOne Edit #{data.dataValues.recipeName}
+        div(class="row")
+            div(class="col-md-8")
+                form(method="POST" action=`/recipes/edit/${data.dataValues.id}`)
+                    div(class="form-group")
+                        div(class="col-md-12")
+                            label(for="recipeName") Recipe Name*
+                            input(class="form-control" id="recipeName" name="recipeName" value=`${data.dataValues.recipeName}`)
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="recipeType") Recipe Type
+                            select(class="form-control" id="recipeType" name="recipeType")
+                                option Breakfast
+                                option Lunch
+                                option Dinner
+                                option Snack
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="ingredientsList") Ingredients List*
+                            - var ingredientsList = `${data.dataValues.ingredientsList}`;
+                            textarea(class="form-control" id="ingredientsList" name="ingredientsList")=ingredientsList
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="directions") Directions*
+                            - var directions = `${data.dataValues.directions}`;
+                            textarea(class="form-control" id="directions" name="directions")=directions
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="imgUrl") Image Url*
+                            input(class="form-control" id="imgUrl" name="imgUrl" value=`${data.dataValues.imgUrl}`)
+                        
+                        div(class="col-md-12 gutter")
+                            label(for="notes") Notes
+                            input(class="form-control" id="notes" name="notes")
+                
+                    button(class="btn btn-secondary" type="submit") Edit Recipe
+                    a(class="btn btn-danger text-white" href=`/recipes/${data.dataValues.id}`) Cancel
+
+            div(class="col-md-3")
+                p.faded Want to add this to your meal prep?
+
+                - if(signedIn === true)
+                    a(class="btn btn-info text-white" href="/login") Login
+
+                - else
+                    form(method="POST" action="/shoppingList")
+                        input(name="addedToList" value="1" hidden)
+                        button(type="submit" class="btn btn-info w-100 text-white") Add to your shopping list

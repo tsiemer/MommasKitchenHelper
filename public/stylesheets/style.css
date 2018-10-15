@@ -1,0 +1,148 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* Intro Section */
+.intro-image{
+  background: url("/images/Introduction_Image.jpeg");
+  background-attachment: fixed;
+  background-size:cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height:100vh;
+  width:100vw;
+  text-align:center;
+}
+
+.meat-section{
+  background-color:white;
+}
+
+.veggie-img{
+  margin:5px 0px;
+  padding:0px;
+}
+
+/* Card */
+.card-link{
+  color:#333;
+  text-decoration:none;
+}
+
+.card-link:hover{
+  color:black;
+}
+
+
+
+/* Main styles */
+.headerOne{
+  font-size:50px;
+  font-weight:bold;
+  font-family: 'Courgette', cursive;
+}
+
+.headerTwo{
+  font-weight:500;
+  font-size:20px;
+  font-family: 'proximanova', Arial, Helvetica, Geneva, sans-serif;
+}
+
+.headerThree{
+  font-weight:600;
+  font-size:25px;
+  line-height:30px;
+  letter-spacing: 3px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.gutter{
+  margin:30px 0px 30px 0px;
+}
+
+.w-100{
+  width:100%;
+}
+
+.faded{
+  opacity: 0.6;
+}
+
+
+/* Recipe Section */
+.recipe-img-overlay{
+  max-height:85vh;
+  width:100vw;
+}
+
+.recipe-card{
+  position:relative;
+}
+
+.recipe-card:hover .recipe-img{
+  opacity:0.3;
+}
+
+.recipe-card:hover .recipe-overlay{
+  opacity:1;
+}
+
+.recipe-img{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.recipe-header{
+  background-color:#ECECEC;
+  margin-top:100px;
+}
+
+.circle-img{
+  position:relative;
+  margin:-100px 0px;
+  margin-bottom:50px;
+  background-color:white;
+  padding:10px;
+  border-radius:50%;
+  height:200px;
+  width:200px;
+}
+
+.recipe-overlay{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.recipe-overlay-text{
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 30px;
+}
+
+li {
+  padding-bottom:10px;
+  margin-left:20px;
+}
+
+
+/* Recipe Form Styles */
+.form-control{
+  font-size:15px;
+  color:#333;
+}
+
+.form-control:focus{
+  outline:0px;
+  box-shadow:none;
+}

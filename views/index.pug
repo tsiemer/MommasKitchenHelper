@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  .intro-image
+  include ./navbar
+  include ./meat
+  include ./veggies
+  include ./fruit
+  div(class="col-md-12 row justify-content-end")
+    h6.headerTwo Checkout our 
+      a(class="btn btn-info" href="/recipes/all") Recipes &#x2192;
